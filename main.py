@@ -107,3 +107,42 @@ for item in all_images:
     i = i + 1
 
 print(all_images)
+
+
+##############################################################################################
+
+#####       ACA PODEMOS PONER CODIGO PARA SABER CUANTAS VECES SE REPITIO CADA RASGO ##########
+
+##############################################################################################
+
+
+##############################################################################################
+
+#####                          Generamos las imagenes                               ##########
+
+##############################################################################################
+
+
+for item in all_images:
+
+    im1 = Image.open(
+        f'./images/cuerpo/{cuerpo_files[item["Cuerpo"]]}.png').convert('RGBA')
+    im2 = Image.open(
+        f'./images/panza/{panzas_files[item["Panza"]]}.png').convert('RGBA')
+    im3 = Image.open(
+        f'./images/brazo/{brazos_files[item["Brazos"]]}.png').convert('RGBA')
+    im4 = Image.open(
+        f'./images/accesorios_brazo/{acc_brazos_files[item["Acc Brazos"]]}.png').convert('RGBA')
+    im5 = Image.open(
+        f'./images/ojos/{ojos_files[item["Ojos"]]}.png').convert('RGBA')
+
+    # Create each composite
+    com1 = Image.alpha_composite(im1, im2)
+    com2 = Image.alpha_composite(com1, im3)
+    com3 = Image.alpha_composite(com2, im4)
+    com4 = Image.alpha_composite(com3, im5)
+
+    # Convert to RGB
+    rgb_im = com4.convert('RGB')
+    file_name = str(item["tokenId"]) + ".png"
+    rgb_im.save("./images/result/" + file_name)
