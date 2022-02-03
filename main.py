@@ -3,60 +3,62 @@ from PIL import Image
 import random
 import json
 import os
+import math
+import data as my_data
 
 
-# Nombre de objetos y sus probabilidades
-cuerpo = ["Verde", "Gris"]
-cuerpo_weights = [50, 50]
+# # Nombre de objetos y sus probabilidades
+# cuerpo = ["Verde", "Gris"]
+# cuerpo_weights = [50, 50]
 
-panzas = ["Verde", "Gris", "Capitan america"]
-panzas_weights = [80, 18, 2]
+# panzas = ["Verde", "Gris", "Capitan america"]
+# panzas_weights = [80, 18, 2]
 
-ojos = ["Red regular", "Black Regular", "Ojos loco",
-        "orange", "Ojos salido", "Ojos recto"]
-ojos_weights = [30, 30, 2, 6, 2, 30]
+# ojos = ["Red regular", "Black Regular", "Ojos loco",
+#         "orange", "Ojos salido", "Ojos recto"]
+# ojos_weights = [30, 30, 2, 6, 2, 30]
 
-brazos = ["Verde", "Gris"]
-brazos_weights = [90, 10]
+# brazos = ["Verde", "Gris"]
+# brazos_weights = [90, 10]
 
-acc_brazos = ["Banana", "Guantes", "Unas", "Pulsera UA"]
-acc_brazos_wheights = [80, 5, 10, 5]
+# acc_brazos = ["Banana", "Guantes", "Unas", "Pulsera UA"]
+# acc_brazos_wheights = [80, 5, 10, 5]
 
 
 # Ruta a las las imagenes
-cuerpo_files = {
-    "Verde": "cuerpo1",
-    "Gris": "cuerpo2"
-}
+# cuerpo_files = {
+#     "Verde": "cuerpo1",
+#     "Gris": "cuerpo2"
+# }
 
-panzas_files = {
-    "Verde": "panza1",
-    "Gris": "panza2",
-    "Capitan america": "panza3"
-}
-
-
-brazos_files = {
-    "Verde": "brazo1",
-    "Gris": "brazo2"
-}
-
-acc_brazos_files = {
-    "Banana": "acc1",
-    "Guantes": "acc2",
-    "Unas": "acc3",
-    "Pulsera UA": "acc4"
-}
+# panzas_files = {
+#     "Verde": "panza1",
+#     "Gris": "panza2",
+#     "Capitan america": "panza3"
+# }
 
 
-ojos_files = {
-    "Red regular": "ojos1",
-    "Black Regular": "ojos2",
-    "Ojos loco": "ojos3",
-    "orange": "ojos4",
-    "Ojos salido": "ojos5",
-    "Ojos recto": "ojos6"
-}
+# brazos_files = {
+#     "Verde": "brazo1",
+#     "Gris": "brazo2"
+# }
+
+# acc_brazos_files = {
+#     "Banana": "acc1",
+#     "Guantes": "acc2",
+#     "Unas": "acc3",
+#     "Pulsera UA": "acc4"
+# }
+
+
+# ojos_files = {
+#     "Red regular": "ojos1",
+#     "Black Regular": "ojos2",
+#     "Ojos loco": "ojos3",
+#     "orange": "ojos4",
+#     "Ojos salido": "ojos5",
+#     "Ojos recto": "ojos6"
+# }
 
 TOTAL_IMAGES = 100  # Total de imagenes que queremos generar
 
@@ -70,12 +72,37 @@ def create_new_image():
     new_image = {}
 
     # For each trait category, select a random trait based on the weightings
-    new_image["Cuerpo"] = random.choices(cuerpo, cuerpo_weights)[0]
-    new_image["Panza"] = random.choices(panzas, panzas_weights)[0]
-    new_image["Brazos"] = random.choices(brazos, brazos_weights)[0]
-    new_image["Acc Brazos"] = random.choices(
-        acc_brazos, acc_brazos_wheights)[0]
-    new_image["Ojos"] = random.choices(ojos, ojos_weights)[0]
+    new_image["background_color"] = random.choices(
+        my_data.background_color, my_data.background_color_weights)[0]
+
+    new_image["environment"] = random.choices(
+        my_data.environment, my_data.environment_weights)[0]
+
+    new_image["body"] = random.choices(my_data.body, my_data.body_weights)[0]
+
+    new_image["belly"] = random.choices(
+        my_data.belly, my_data.belly_weights)[0]
+
+    new_image["tail"] = random.choices(my_data.tail, my_data.tail_weights)[0]
+
+    new_image["back"] = random.choices(my_data.back, my_data.back_weights)[0]
+
+    new_image["legs"] = random.choices(my_data.legs, my_data.legs_weights)[0]
+
+    new_image["arms"] = random.choices(my_data.arms, my_data.arms_weights)[0]
+
+    new_image["necklace"] = random.choices(
+        my_data.necklace, my_data.necklace_weights)[0]
+
+    new_image["mouth"] = random.choices(
+        my_data.mouth, my_data.mouth_weights)[0]
+
+    new_image["acc_arms"] = random.choices(
+        my_data.acc_arms, my_data.acc_arms_weights)[0]
+
+    new_image["eyes"] = random.choices(my_data.eyes, my_data.eyes_weights)[0]
+
+    new_image["hat"] = random.choices(my_data.hat, my_data.hat_weights)[0]
 
     if new_image in all_images:
         return create_new_image()
@@ -126,23 +153,59 @@ print(all_images)
 for item in all_images:
 
     im1 = Image.open(
-        f'./images/cuerpo/{cuerpo_files[item["Cuerpo"]]}.png').convert('RGBA')
-    im2 = Image.open(
-        f'./images/panza/{panzas_files[item["Panza"]]}.png').convert('RGBA')
-    im3 = Image.open(
-        f'./images/brazo/{brazos_files[item["Brazos"]]}.png').convert('RGBA')
-    im4 = Image.open(
-        f'./images/accesorios_brazo/{acc_brazos_files[item["Acc Brazos"]]}.png').convert('RGBA')
-    im5 = Image.open(
-        f'./images/ojos/{ojos_files[item["Ojos"]]}.png').convert('RGBA')
+        f'./images/background_color/{my_data.background_color_files[item["background_color"]]}.png').convert('RGBA')
 
-    # Create each composite
+    im2 = Image.open(
+        f'./images/environment/{my_data.environment_files[item["environment"]]}.png').convert('RGBA')
+
+    im3 = Image.open(
+        f'./images/body/{my_data.body_files[item["body"]]}.png').convert('RGBA')
+
+    im4 = Image.open(
+        f'./images/belly/{my_data.belly_files[item["belly"]]}.png').convert('RGBA')
+
+    im5 = Image.open(
+        f'./images/tail/{my_data.tail_files[item["tail"]]}.png').convert('RGBA')
+
+    im6 = Image.open(
+        f'./images/back/{my_data.back_files[item["back"]]}.png').convert('RGBA')
+
+    im7 = Image.open(
+        f'./images/legs/{my_data.legs_files[item["legs"]]}.png').convert('RGBA')
+
+    im8 = Image.open(
+        f'./images/arms/{my_data.arms_files[item["arms"]]}.png').convert('RGBA')
+
+    im9 = Image.open(
+        f'./images/necklace/{my_data.necklace_files[item["necklace"]]}.png').convert('RGBA')
+
+    im10 = Image.open(
+        f'./images/mouth/{my_data.mouth_files[item["mouth"]]}.png').convert('RGBA')
+
+    im11 = Image.open(
+        f'./images/acc_arms/{my_data.acc_arms_files[item["acc_arms"]]}.png').convert('RGBA')
+
+    im12 = Image.open(
+        f'./images/eyes/{my_data.eyes_files[item["eyes"]]}.png').convert('RGBA')
+
+    im13 = Image.open(
+        f'./images/hat/{my_data.hat_files[item["hat"]]}.png').convert('RGBA')
+
+    # # Create each composite
     com1 = Image.alpha_composite(im1, im2)
     com2 = Image.alpha_composite(com1, im3)
     com3 = Image.alpha_composite(com2, im4)
     com4 = Image.alpha_composite(com3, im5)
+    com5 = Image.alpha_composite(com4, im6)
+    com6 = Image.alpha_composite(com5, im7)
+    com7 = Image.alpha_composite(com6, im8)
+    com8 = Image.alpha_composite(com7, im9)
+    com9 = Image.alpha_composite(com8, im10)
+    com10 = Image.alpha_composite(com9, im11)
+    com11 = Image.alpha_composite(com10, im12)
+    com12 = Image.alpha_composite(com11, im13)
 
     # Convert to RGB
-    rgb_im = com4.convert('RGB')
+    rgb_im = com12.convert('RGB')
     file_name = str(item["tokenId"]) + ".png"
     rgb_im.save("./images/result/" + file_name)

@@ -3,7 +3,7 @@
 background_color = ["normal_1", "normal_2", "normal_3", "normal_4", "normal_5", "normal_6", "normal_7", "normal_8",
                     "normal_9", "normal_10", "normal_11", "normal_12", "normal_13", "normal_14", "normal_blue", "epic_dark_blue"]
 background_color_weights = [10, 6, 6, 6, 6, 6,
-                            6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+                            6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 
 
 environment = ["sun_clouds_drones", "sun_planes_helicopters", "meteorites", "japanese_poster",
@@ -51,8 +51,8 @@ mouth_weights = [30, 20, 20, 10, 10, 10]
 
 
 acc_arms = ["Banana", "Glove_with_gems", "Smartphone", "Boxing_gloves",
-            "Watch_brown_band", "Watch_white_band" "Bracelet_G", "Knife", "Chains", "Bracelet_UA", "snack"]
-acc_arms_wheights = [10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 5]
+            "Watch_brown_band", "Watch_white_band", "Bracelet_G", "Knife", "Chains", "Bracelet_UA", "snack"]
+acc_arms_weights = [10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 5]
 
 
 eyes = ["red", "straight", "in_love",
@@ -115,7 +115,7 @@ environment_files = {
 body_files = {
     "gray": "gray",
     "green": "green",
-    "Vsanta_clauserde": "santa_claus"
+    "santa_claus": "santa_claus"
 }
 
 belly_files = {
