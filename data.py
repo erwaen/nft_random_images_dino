@@ -10,61 +10,66 @@ def name_to_file_path(list_of_names):
 
 background_color = ["normal_1", "normal_2", "normal_3", "normal_4", "normal_5", "normal_6",
                     "epic_dark_blue"]
-background_color_weights = [10, 20, 10, 10, 20, 20, 10]
+background_color_weights = [15, 11, 12, 25, 20, 15, 2]
 
 
-environment = ["sun_clouds_drones", "sun_planes_helicopters", "meteorites", "japanese_poster",
+environment = ["empty", "sun_clouds_drones", "sun_planes_helicopters", "meteorites", "japanese_poster",
                "burning_city", "beach", "eggs", "night_city", "trees_and_houses", "dino_park"]
-environment_weights = [10, 10, 10, 10, 10, 10,
-                       10, 10, 10, 10]
+environment_weights = [50, 9, 9, 6, 6,
+                       3, 3, 4, 1, 3, 6]
 
 
 body = ["gray", "green", "dark_gray"]
-body_weights = [40, 40, 20]
+body_weights = [35, 56, 9]
 
 
 belly = ["gray", "green", "cream", "purple", "yellow", "red", "child",
          "yin_yang_symbol", "super_belly", "american_belly", "lantern_belly"]
-belly_weights = [10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 5]
+belly_weights = [30, 30, 11.2, 4, 7, 4, 0.8, 4, 3, 3, 3]
 
 
-back = ["green", "brown", "pink", "light_blue",
-        "blue", "thunder", "epic_blue", "epic_purple"]
-back_weights = [20, 20, 10, 10, 10, 10, 10, 10]
+back = ["green", "pink", "light_blue", "blue", "brown",
+        "epic_blue", "epic_purple", "thunder"]
+back_weights = [40, 20, 15, 10, 8, 4, 2.5, 0.5]
 
 
-legs = ["gray", "green", "dark_gray", "builder",
-        "earth", "ball", "wheels", "wheelchair", "fried_chicken"]
-legs_weights = [20, 10, 10, 10, 10, 10, 10, 10, 10]
+legs = ["green", "gray", "dark_gray",
+        "builder", "earth", "ball", "wheels", "wheelchair", "fried_chicken"]
+legs_weights = [40, 29, 9,
+                3, 7, 6, 2, 3, 1]
 
 
-arms = ["Gray", "Green",  "dark_gray", "Skull_gray", "Skull_green", "Rainbow_gray",
+arms = ["Green", "Gray",  "dark_gray", "Skull_gray", "Skull_green", "Rainbow_gray",
         "Rainbow_green", "Moab_gray", "Moab_green", "Nuke_gray", "Nuke_green", "God_green"]
-arms_weights = [10, 10, 20, 20, 10, 10, 10, 2, 2, 2, 2, 2]
+arms_weights = [40, 20, 8.5, 6.5, 6.5, 3, 3, 2, 2, 4, 4, 0.5]
 
 
-necklace = ["spike", "whistle", "red_scarf",
-            "green_scarf", "purple_scarf", "christmas_scarf"]
-necklace_weights = [30, 20, 20, 10, 10, 10]
+necklace = ["empty", "spike",  "red_scarf",
+            "green_scarf", "purple_scarf", "whistle"]
+necklace_weights = [62, 5, 2,
+                    15, 15, 1]
 
 
 mouth = ["normal_teeth", "gold_tooth", "fire",
          "laser_beam", "bubbles", "tongue_teeth_saliva"]
-mouth_weights = [30, 20, 20, 10, 10, 10]
+mouth_weights = [70, 15, 5, 5, 3.5, 1.5]
 
 
-acc_arms = ["Banana", "Glove_with_gems", "Smartphone", "Boxing_gloves",
+acc_arms = ["empty", "Banana", "Glove_with_gems", "Smartphone", "Boxing_gloves",
             "Watch_brown_band", "Watch_white_band", "Bracelet_G", "p_ball", "Chains", "Bracelet_UA", "snack"]
-acc_arms_weights = [10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 5]
+acc_arms_weights = [60, 10, 3, 2, 1,
+                    2, 4, 8, 0.5, 0.5, 7, 2]
 
 
-eyes = ["regular_black", "regular_green", "regular_blue", "red", "straight", "in_love",
-        "tears", "cross_eyed", "tired", "eyes_out"]
-eyes_weights = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+eyes = ["regular_black", "regular_green", "regular_blue", "red",
+        "straight", "tears", "cross_eyed", "tired", "eyes_out", "in_love"]
+eyes_weights = [24, 24, 24, 13,
+                5, 4, 2, 2, 1, 1]
 
-hat = ["black", "mexican", "teletubie", "santa_claus",
+hat = ["empty", "teletubie", "black", "mexican",  "santa_claus",
        "chef", "pirate", "crown", "black_hair", "rainbow_hair"]
-hat_weights = [20, 10, 10, 10, 10, 10, 10, 10, 10]
+hat_weights = [65, 10, 10, 1, 4,
+               2.5, 3, 0.5, 2, 2]
 
 
 print("background_color: ", len(background_color))

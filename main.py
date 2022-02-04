@@ -60,7 +60,7 @@ import data as my_data
 #     "Ojos recto": "ojos6"
 # }
 
-TOTAL_IMAGES = 100  # Total de imagenes que queremos generar
+TOTAL_IMAGES = 1000  # Total de imagenes que queremos generar
 
 all_images = []
 
