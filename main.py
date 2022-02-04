@@ -83,8 +83,6 @@ def create_new_image():
     new_image["belly"] = random.choices(
         my_data.belly, my_data.belly_weights)[0]
 
-    new_image["tail"] = random.choices(my_data.tail, my_data.tail_weights)[0]
-
     new_image["back"] = random.choices(my_data.back, my_data.back_weights)[0]
 
     new_image["legs"] = random.choices(my_data.legs, my_data.legs_weights)[0]
@@ -164,31 +162,31 @@ for item in all_images:
     im4 = Image.open(
         f'./images/belly/{my_data.belly_files[item["belly"]]}.png').convert('RGBA')
 
-    im5 = Image.open(
-        f'./images/tail/{my_data.tail_files[item["tail"]]}.png').convert('RGBA')
+    # im5 = Image.open(
+    #     f'./images/tail/{my_data.tail_files[item["tail"]]}.png').convert('RGBA')
 
-    im6 = Image.open(
+    im5 = Image.open(
         f'./images/back/{my_data.back_files[item["back"]]}.png').convert('RGBA')
 
-    im7 = Image.open(
+    im6 = Image.open(
         f'./images/legs/{my_data.legs_files[item["legs"]]}.png').convert('RGBA')
 
-    im8 = Image.open(
+    im7 = Image.open(
         f'./images/arms/{my_data.arms_files[item["arms"]]}.png').convert('RGBA')
 
-    im9 = Image.open(
+    im8 = Image.open(
         f'./images/necklace/{my_data.necklace_files[item["necklace"]]}.png').convert('RGBA')
 
-    im10 = Image.open(
+    im9 = Image.open(
         f'./images/mouth/{my_data.mouth_files[item["mouth"]]}.png').convert('RGBA')
 
-    im11 = Image.open(
+    im10 = Image.open(
         f'./images/acc_arms/{my_data.acc_arms_files[item["acc_arms"]]}.png').convert('RGBA')
 
-    im12 = Image.open(
+    im11 = Image.open(
         f'./images/eyes/{my_data.eyes_files[item["eyes"]]}.png').convert('RGBA')
 
-    im13 = Image.open(
+    im12 = Image.open(
         f'./images/hat/{my_data.hat_files[item["hat"]]}.png').convert('RGBA')
 
     # # Create each composite
@@ -203,9 +201,8 @@ for item in all_images:
     com9 = Image.alpha_composite(com8, im10)
     com10 = Image.alpha_composite(com9, im11)
     com11 = Image.alpha_composite(com10, im12)
-    com12 = Image.alpha_composite(com11, im13)
 
     # Convert to RGB
-    rgb_im = com12.convert('RGB')
+    rgb_im = com11.convert('RGB')
     file_name = str(item["tokenId"]) + ".png"
     rgb_im.save("./images/result/" + file_name)
