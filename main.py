@@ -5,6 +5,7 @@ import json
 import os
 import math
 import data as my_data
+import tools as my_tools
 
 
 # # Nombre de objetos y sus probabilidades
@@ -60,7 +61,7 @@ import data as my_data
 #     "Ojos recto": "ojos6"
 # }
 
-TOTAL_IMAGES = 1000  # Total de imagenes que queremos generar
+TOTAL_IMAGES = int(input("How many images do you want to generate?: "))  # Total de imagenes que queremos generar
 
 all_images = []
 
@@ -139,6 +140,77 @@ print(all_images)
 #####       ACA PODEMOS PONER CODIGO PARA SABER CUANTAS VECES SE REPITIO CADA RASGO ##########
 
 ##############################################################################################
+
+traits_counts = {}
+for trait in my_data.traits_names:
+    traits_counts[trait] = {}
+
+print( traits_counts)
+
+for item in my_data.background_color:
+    traits_counts["background_color"][item] = 0
+
+for item in my_data.environment:
+    traits_counts["environment"][item] = 0
+
+for item in my_data.body:
+    traits_counts["body"][item] = 0
+
+for item in my_data.belly:
+    traits_counts["belly"][item] = 0
+
+for item in my_data.back:
+    traits_counts["back"][item] = 0
+
+for item in my_data.legs:
+    traits_counts["legs"][item] = 0
+
+for item in my_data.arms:
+    traits_counts["arms"][item] = 0
+
+for item in my_data.necklace:
+    traits_counts["necklace"][item] = 0
+
+for item in my_data.mouth:
+    traits_counts["mouth"][item] = 0
+
+for item in my_data.acc_arms:
+    traits_counts["acc_arms"][item] = 0
+
+for item in my_data.hat:
+    traits_counts["hat"][item] = 0
+
+for item in my_data.eyes:
+    traits_counts["eyes"][item] = 0
+
+for image in all_images:
+    traits_counts["background_color"][image["background_color"]] +=1
+    traits_counts["environment"][image["environment"]] +=1
+    traits_counts["body"][image["body"]] +=1
+    traits_counts["belly"][image["belly"]] +=1
+    traits_counts["back"][image["back"]] +=1
+    traits_counts["legs"][image["legs"]] +=1
+    traits_counts["arms"][image["arms"]] +=1
+    traits_counts["necklace"][image["necklace"]] +=1
+    traits_counts["mouth"][image["mouth"]] +=1
+    traits_counts["acc_arms"][image["acc_arms"]] +=1
+    traits_counts["hat"][image["hat"]] +=1
+    traits_counts["eyes"][image["eyes"]] +=1
+
+print("\n\n\n==================\n==================\n")
+
+for trait_key, trait_value in traits_counts.items():
+    print(f'{trait_key}:')
+    for item_key, item_value in trait_value.items():
+        print(f'\t{item_key}: {item_value}')
+    print()
+
+
+print("\n\n\n==================\n==================\n")
+
+my_tools.write_traits_counts_in_a_txt_and_json(traits_counts)
+
+
 
 
 ##############################################################################################

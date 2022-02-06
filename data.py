@@ -8,6 +8,9 @@ def name_to_file_path(list_of_names):
     return dictionary_to_return
 
 
+traits_names = ["background_color", "environment", "body", "belly", "back", "legs", "arms", "necklace", "mouth", "acc_arms", "eyes", "hat"] # Esto le doy uso para contar cuanto de cada tipo de rasgo se genero
+
+
 background_color = ["normal_1", "normal_2", "normal_3", "normal_4", "normal_5", "normal_6",
                     "epic_dark_blue"]
 background_color_weights = [15, 11, 12, 25, 20, 15, 2]
