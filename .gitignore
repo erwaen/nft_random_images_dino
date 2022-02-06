@@ -1,6 +1,7 @@
 
 project_folders
 images/
+metadata/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
