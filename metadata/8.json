@@ -1,0 +1,55 @@
+{
+    "image": "https://https://gateway.pinata.cloud/ipfs/QmWN4jKxP1356Nn2Q4FwjNMTjgjxhBbS4J9tkj1XeM5pvy/8.png",
+    "tokenId": 8,
+    "name": "NFT_DINO 8",
+    "attributes": [
+        {
+            "trait_type": "background_color",
+            "value": "normal_4"
+        },
+        {
+            "trait_type": "environment",
+            "value": "empty"
+        },
+        {
+            "trait_type": "body",
+            "value": "green"
+        },
+        {
+            "trait_type": "belly",
+            "value": "gray"
+        },
+        {
+            "trait_type": "back",
+            "value": "light_blue"
+        },
+        {
+            "trait_type": "legs",
+            "value": "green"
+        },
+        {
+            "trait_type": "arms",
+            "value": "Green"
+        },
+        {
+            "trait_type": "necklace",
+            "value": "green_scarf"
+        },
+        {
+            "trait_type": "mouth",
+            "value": "gold_tooth"
+        },
+        {
+            "trait_type": "acc_arms",
+            "value": "empty"
+        },
+        {
+            "trait_type": "eyes",
+            "value": "regular_black"
+        },
+        {
+            "trait_type": "hat",
+            "value": "black"
+        }
+    ]
+}

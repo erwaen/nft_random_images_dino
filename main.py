@@ -4,6 +4,7 @@ import random
 import json
 import os
 import math
+from IPython.display import display 
 import data as my_data
 import tools as my_tools
 
@@ -132,7 +133,7 @@ for item in all_images:
     item["tokenId"] = i
     i = i + 1
 
-print(all_images)
+my_tools.create_metadata_all_traits(all_images)
 
 
 ##############################################################################################

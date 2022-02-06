@@ -1,0 +1,55 @@
+{
+    "image": "https://https://gateway.pinata.cloud/ipfs/QmWN4jKxP1356Nn2Q4FwjNMTjgjxhBbS4J9tkj1XeM5pvy/0.png",
+    "tokenId": 0,
+    "name": "NFT_DINO 0",
+    "attributes": [
+        {
+            "trait_type": "background_color",
+            "value": "normal_1"
+        },
+        {
+            "trait_type": "environment",
+            "value": "sun_clouds_drones"
+        },
+        {
+            "trait_type": "body",
+            "value": "green"
+        },
+        {
+            "trait_type": "belly",
+            "value": "lantern_belly"
+        },
+        {
+            "trait_type": "back",
+            "value": "pink"
+        },
+        {
+            "trait_type": "legs",
+            "value": "green"
+        },
+        {
+            "trait_type": "arms",
+            "value": "Skull_green"
+        },
+        {
+            "trait_type": "necklace",
+            "value": "empty"
+        },
+        {
+            "trait_type": "mouth",
+            "value": "normal_teeth"
+        },
+        {
+            "trait_type": "acc_arms",
+            "value": "empty"
+        },
+        {
+            "trait_type": "eyes",
+            "value": "regular_green"
+        },
+        {
+            "trait_type": "hat",
+            "value": "empty"
+        }
+    ]
+}
